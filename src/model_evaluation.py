@@ -220,6 +220,22 @@ def analyse_results(results_df):
 
     return variant_analysis
 
+def save_results(results_df, analysis_df, base_filename):
+    """Save results and analysis"""
+
+    timestamp = pd.Timestamp.now().strftime('%Y%m%d_%H%M%S')
+    results_dir = os.path.join("..", "results")
+
+    # Save results
+    results_filename = os.path.join(results_dir, (f"{base_filename}_results_{timestamp}.csv"))
+    results_df.to_csv(results_filename, index=False)
+    print(f"\nResults saved to {results_filename}")
+
+    # Save analysis
+    analysis_filename = os.path.join(results_dir, (f"{base_filename}_analysis_{timestamp}.csv"))
+    analysis_df.to_csv(analysis_filename)
+    print(f"\nAnalysis saved to {results_filename}")
+
 def main():
     """Main function to run evaluation"""
 
@@ -242,6 +258,9 @@ def main():
     
     # Analyse results
     analysis_df = analyse_results(results_df)
+
+    # Save Reults
+    save_results(results_df, analysis_df, "eval")
 
     # Show results data info
     print(f"\nResults DataFrame shape: {results_df.shape}")
