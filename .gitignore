@@ -11,8 +11,7 @@ env/
 
 # Results and data files
 *.csv
-*.json
-results/
+results/*.csv
 data/
 
 # OS files
