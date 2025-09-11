@@ -1,9 +1,11 @@
 """
 --- Refusal Robustness Evaluation ---
-Creation and processing of example database for testing.
+
+Create and process custom database for testing.
 """
 
 import pandas as pd
+import os
 
 def create_harmful_requests_dataset():
     """Create base dataset of harmful requests"""
@@ -96,10 +98,13 @@ def create_full_dataset():
 
 def save_dataset(df, filename):
     """Save dataset to CSV format"""
+
+    data_dir = os.path.join("..", "data")
+    data_filename = os.path.join(data_dir, filename)
     
     # Save as CSV
-    df.to_csv(filename, index=False)
-    print(f"Saved {len(df)} test cases to CSV file: {filename}")
+    df.to_csv(data_filename, index=False)
+    print(f"Saved {len(df)} cases to CSV file: {data_filename}")
 
 def analyse_dataset(df):
     """Analyse full dataset"""
@@ -129,14 +134,14 @@ def analyse_dataset(df):
 
     print("\nNext steps:")
     print("1. Add API keys to .env file")
-    print("2. Run model_testing.py")
+    print("2. Run model_evaluation.py")
 
 def main():
-    """Main function to setup and analyse test dataset"""
+    """Main function to setup and analyse custom dataset"""
     
     # Create, save, and analyse full dataset
     dataset = create_full_dataset()
-    save_dataset(dataset, "test_dataset.csv")
+    save_dataset(dataset, "custom_dataset.csv")
     analyse_dataset(dataset)
         
     return dataset
