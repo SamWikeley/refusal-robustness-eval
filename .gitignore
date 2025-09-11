@@ -12,7 +12,7 @@ env/
 # Results and data files
 *.csv
 results/*.csv
-data/
+data/*.csv
 
 # OS files
 .DS_Store
