@@ -7,9 +7,9 @@ Example usage:
 python model_evaluation.py --dataset advbench --model gpt-3.5-turbo --max 50
 
 Arguments:
-dataset: [custom, advbench, advbench-small]
-model: OpenAI models
-max: int
+dataset: choices=['custom', 'advbench', 'advbench-small'], default='custom'
+model: OpenAI models, default=gpt-3.5-turbo
+max: type=int, default=None
 """
 
 import pandas as pd

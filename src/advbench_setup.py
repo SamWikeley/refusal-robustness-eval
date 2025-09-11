@@ -7,8 +7,8 @@ Example usage:
 python advbench_setup.py --subset 100 --test 10
 
 Arguments:
-subset: int
-test: int
+subset: type=int, defualt=None
+test: type=int, default=20
 """
 
 import pandas as pd
