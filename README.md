@@ -5,7 +5,7 @@ A systematic evaluation framework for testing the robustness of large language m
 
 ## Overview
 
-This project implements a comprehensive evaluation framework deseigned to assess the propensity of large language models (LLMs) to comply with adversarial prompts. The framework is implemented from scratch and supports both custom datasets and industry-standard benchmarks, such as AdvBench [[1]](#1). 
+This project implements a comprehensive evaluation framework designed to assess the propensity of large language models (LLMs) to comply with adversarial prompts. The framework is implemented from scratch and supports both custom datasets and industry-standard benchmarks, such as AdvBench [[1]](#1). 
 
 Given a dataset of intentionally malicious requests, the program automatically generates an evaluation dataset based on 7 distinct prompt variations designed to bypass LLM safety protocols. Each evaluation prompt is sent to a target model via API integration and the model responses are classified by a refusal detection algorithm. The program computes refusal rates by attack type and identifies the most effective jailbreak methods.  
 
@@ -13,7 +13,7 @@ Given a dataset of intentionally malicious requests, the program automatically g
 ## Key Features
 
 - **Multi-variant jailbreak testing:** 7 distinct prompt variations (direct, polite, artistic, roleplay, hypothetical, educational, authority)
-- **Automated refusal detection:** NLP-based system to clasify model responses 
+- **Automated refusal detection:** NLP-based system to classify model responses 
 - **Statistical analysis:** Comprehensive reporting of refusal rates and potential vulnerabilities
 - **AdvBench integration:** Support for industry-standard AI safety benchmarks
 - **Scalable pipeline:** Simple extension to further models and datasets, and more sophisticated evaluation methodologies
